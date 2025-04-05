@@ -25,6 +25,6 @@
 
 @media only screen and (max-width: 600px) {
     img#back-icone{
-        width: 50px;
+        width: 50px !important;
     }
   }
