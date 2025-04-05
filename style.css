@@ -1,0 +1,30 @@
+.items-head {
+    margin: auto;
+    display: flex;
+    width: 1200px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.items {
+    width: 250px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 390px;
+}
+
+.items-title {
+    font-size: 25px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    font-family: monospace;
+}
+
+@media only screen and (max-width: 600px) {
+    img#back-icone{
+        width: 50px;
+    }
+  }
