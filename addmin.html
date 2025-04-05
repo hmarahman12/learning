@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/icon" href="../pic/icone.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" crossorigin="anonymous"/>
+    <title>Addmin Pannel</title>
+    <style>
+        .container{
+            margin-top: 50px;
+        }
+        .upload-head {
+            background: #cfcfcf;
+            width: auto;
+            height: 500px;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .upload-head img {
+            height: 250px;
+            padding: 5px 0;
+        }
+        input {
+            border: none;
+            border: 1px solid #979797;
+            border-radius: 3px;
+            text-decoration: none;
+            padding: 5px;
+        }
+        input.submit {
+            background: #d080e9;
+            margin: 3px 0;
+            text-decoration: none;
+            color: #fff;
+        }
+        span.dn {
+            color: #f76060;
+            background: #ffeded;
+            font-size: 15px;
+        }
+        span.sc {
+            background: #bde1bd;
+            color: #13b113;
+        }
+    </style>
+</head>
+<body>
+    <div class="container col-md-4">
+        <div class="upload-head">
+            <h3>Upload File</h3>
+            <input id="title" type="text" placeholder="Title" required>
+            <img id="img" src="./Learn (1).png" alt="">
+            <input id="Sourcescode" type="text" placeholder="Sources Code" required>
+            <input id="submit" class="submit" type="submit" value="Submit">
+            <span class="dn"></span>
+            <span class="sc"></span>
+        </div>
+    </div>
+
+    <script src= "https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
