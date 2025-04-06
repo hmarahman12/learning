@@ -27,4 +27,10 @@
     img#back-icone{
         width: 50px !important;
     }
+    .items-head{
+        width: unset !important;
+    }
+    textarea {
+    width: 245px !important;
+    }
   }
