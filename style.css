@@ -29,8 +29,9 @@
     }
     .items-head{
         width: unset !important;
+        height: 500px !important;
     }
     textarea {
-    width: 245px !important;
+    width: 100% !important;
     }
   }
