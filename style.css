@@ -22,6 +22,19 @@
     display: block;
     font-family: monospace;
 }
+.dis{
+    position: relative;
+    width: 50%;
+}
+input[type="button"] {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 2px;
+    font-size: 20px;
+    width: 80px;
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 600px) {
     img#back-icone{
@@ -33,7 +46,17 @@
     .items{
         height: 500px !important;
     }
-    textarea {
-    width: 100% !important;
+    .dis {
+        width: 100% !important;
+    }
+    .dis textarea {
+    width: 95% !important;
+    }
+    input[type="button"]{
+        bottom: 15px !important;
+        right: 20px !important;
+    }
+    .dis textarea::-webkit-scrollbar{
+        width: 0 !important;
     }
   }
