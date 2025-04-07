@@ -17,7 +17,7 @@ let allpost = document.querySelector(".items-head");
 
 let herf = localStorage.getItem("herf");
 
-
+//on page function
 function oneValue(){
   db.ref('posts/' + herf).on('value', function(snapshot){
     var posts = snapshot.val();
@@ -27,11 +27,21 @@ function oneValue(){
     //posts list
     allpost.innerHTML += `<a href="index.html"><img id="back-icone"; src="./back.webp" alt=""></a>
     
-    <div class="items"> <div class="items-title">${posts.title}</div><div class="item-main">${posts.fullcode}</div></div>`;
-    let textarea = document.createElement ("textarea");
-    textarea.style="width: 347px; height: 92px;";
-    textarea.innerText = posts.fullcode;
-    document.querySelector('.items').appendChild(textarea);
+    <div class="items"> <div class="items-title">${posts.title}</div><div class="item-main">${posts.fullcode}</div></div> <div class="dis">  <textarea style="width: 100%; height: 92px;" readonly id="text">${posts.fullcode}</textarea> <input type="button" value="Copy"> </div>`;
+    // let textarea = document.createElement ("textarea");
+    // textarea.style="width: 100%; height: 92px;";
+    // textarea.innerText = posts.fullcode;
+    // document.querySelector('.dis').appendChild(textarea);
+
+    //copy function
+    document.querySelector("input[type='button']").addEventListener('click', function(){
+      const text = document.querySelector("#text").value;
+      navigator.clipboard.writeText(text).then(function(){
+          document.querySelector("input[type='button']").value = "Copid";
+      })
+    });
+
+    //back buttton function
     document.querySelector("#back-icone").addEventListener('click',function(){
       //data delete
       function deleteData(){
@@ -44,6 +54,7 @@ function oneValue(){
     })
 }
 
+//home page function
 function homePage(){
   db.ref('posts/').on('value', function(snapshot){
     var posts = snapshot.val();
@@ -77,38 +88,21 @@ function homePage(){
     }
   })
 }
-    if(herf){
-      oneValue()
-    }else{
-      homePage()
+
+//condition
+if(herf){
+  oneValue()
+}else{
+  homePage()
+}
+
+//local storage value set
+function setLink() {
+  db.ref('link/').on('value', function(snapshot){
+    var link = snapshot.val();
+    if(link){
+      localStorage.setItem("herf",link.link);
     }
-
-
-    function setLink() {
-      db.ref('link/').on('value', function(snapshot){
-      var link = snapshot.val();
-      if(link){
-        localStorage.setItem("herf",link.link);
-      }
       
-      })
-    }setLink()
-
-
-
-
-
-    // function onloaded(){
-    //   db.ref('link/').on('value', function(snapshot){
-    //     var link = snapshot.val();
-    //     console.log(link.link);
-    //     if(link){
-    //       console.log("yes");
-    //       allpost.innerHTML = '';
-    //       oneValue()
-          
-    //     }
-      
-      
-    //   })
-    // }onloaded()
+  })
+}setLink();
